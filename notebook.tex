@@ -1,20 +1,20 @@
-% !TeX program = pdflatex
 \documentclass{article}
-\usepackage[margin=0pt]{geometry}
+\usepackage{background}
 \usepackage{graphicx}
+%\usepackage[a6paper, margin=0pt]{geometry}
+\usepackage[paperwidth=16cm,paperheight=24cm]{geometry}
+\usepackage[a4,frame,center]{crop}
 
-\def\Step{1cm}
-\def\MyDot{\scalebox{1.75}{.}}
-
-\def\Dotbox{\hbox to \Step{\smash{\MyDot}\hfil}}
-\def\DotPattern{%
-  \hbox to \paperwidth{\leaders\Dotbox\hfill}\kern-.4mm
-  \vbox to \Step{\offinterlineskip\leaders\hbox to \paperwidth{\leaders\Dotbox\hfill}\vfill}
-  \nointerlineskip\hbox to \paperwidth{\leaders\Dotbox\hfill}%
+\backgroundsetup{
+scale=1,
+angle=0,
+color=black,
+contents={\includegraphics{grid}}
 }
-\def\DotGrid{\par\leaders\vbox{\DotPattern}\vfill}
-
-\pagestyle{empty}
 \begin{document}
-\mbox{}\DotGrid
+
+\mbox{}
+\clearpage
+\mbox
+
 \end{document}
