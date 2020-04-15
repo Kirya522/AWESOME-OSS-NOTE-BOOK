@@ -1,20 +1,11 @@
-\documentclass{article}
-\usepackage{background}
-\usepackage{graphicx}
+\documentclass{book}
 %\usepackage[a6paper, margin=0pt]{geometry}
-\usepackage[paperwidth=16cm,paperheight=24cm]{geometry}
-\usepackage[a4,frame,center]{crop}
+\usepackage[a4paper]{geometry}
+\usepackage{pdfpages}
 
-\backgroundsetup{
-scale=1,
-angle=0,
-color=black,
-contents={\includegraphics{grid}}
-}
+
 \begin{document}
 
-\mbox{}
-\clearpage
-\mbox
+\includepdf[landscape,pages={1,2},nup=1x2,frame,delta=2cm 0]{page.pdf}
 
 \end{document}
