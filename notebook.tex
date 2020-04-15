@@ -1,11 +1,38 @@
 \documentclass{book}
-%\usepackage[a6paper, margin=0pt]{geometry}
-\usepackage[a4paper]{geometry}
-\usepackage{pdfpages}
+\usepackage{background}
+\usepackage{graphicx}
+\usepackage[a5paper]{geometry}
 
+\backgroundsetup{
+scale=1,
+angle=0,
+color=black,
+contents={\includegraphics{grid}}
+}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancyplain}
+\fancyfoot[EL,OR]{\thepage}
+\fancyfoot[C]{}
+\renewcommand{\headrulewidth}{0pt}
 
 \begin{document}
 
-\includepdf[landscape,pages={1,2},nup=1x2,frame,delta=2cm 0]{page.pdf}
+\mbox{}
+\clearpage
+\mbox{}
+\clearpage
+\mbox{}
+\clearpage
+\mbox{}
+\clearpage
+\mbox{}
+\clearpage
+\mbox{}
+\clearpage
+\mbox{}
+\clearpage
+\mbox{}
 
 \end{document}
