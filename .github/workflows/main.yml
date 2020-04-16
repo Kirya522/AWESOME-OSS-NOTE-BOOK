@@ -29,7 +29,10 @@ jobs:
         IMAGE_NAME: adnrv/texlive:basic
       run: |
         cd ${GITHUB_WORKSPACE}
-        docker run adnrv/texlive:basic /bin/bash -c "cd ${GITHUB_WORKSPACE} && make && make clean"
+        docker run adnrv/texlive:basic \
+        -w /project/ \
+        -v $(pwd):/project/ \
+        /bin/bash -c "cd ${GITHUB_WORKSPACE} && make && make clean"
       
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
