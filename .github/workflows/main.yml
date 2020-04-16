@@ -33,7 +33,7 @@ jobs:
         -w /project/ \
         -v $(pwd):/project/ \
         adnrv/texlive:basic \
-        /bin/bash -c "cd ${GITHUB_WORKSPACE} && make && make clean"
+        /bin/bash -c " ls -la && make && make clean"
       
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
