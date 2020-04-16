@@ -4,9 +4,35 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "build",
             "type": "shell",
-            "command": "echo Hello"
+            "command": "make",
+            "args": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make clean",
+            "args": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "clean all",
+            "type": "shell",
+            "command": "make cleanall",
+            "args": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            }
         }
     ]
 }
