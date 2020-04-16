@@ -21,12 +21,12 @@ jobs:
     
     - name: Pull docker image
       env:
-        IMAGE_NAME: adnrv/texlive:basic
+        IMAGE_NAME: adnrv/texlive:latest
       run: docker pull $IMAGE_NAME
 
     - name: Run build
       env:
-        IMAGE_NAME: adnrv/texlive:basic
+        IMAGE_NAME: adnrv/texlive:latest
       run: |
         cd ${GITHUB_WORKSPACE}
         docker run \
