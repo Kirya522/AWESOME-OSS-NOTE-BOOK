@@ -1,18 +1,7 @@
 % !TeX program = pdflatex
-\documentclass{article}
+\documentclass{grid}
 \usepackage[margin=0pt]{geometry}
 \usepackage{graphicx}
-
-\def\Step{1cm}
-\def\MyDot{\scalebox{1.75}{.}}
-
-\def\Dotbox{\hbox to \Step{\smash{\MyDot}\hfil}}
-\def\DotPattern{
-  \hbox to \paperwidth{\leaders\Dotbox\hfill}\kern-.4mm
-  \vbox to \Step{\offinterlineskip\leaders\hbox to \paperwidth{\leaders\Dotbox\hfill}\vfill}
-  \nointerlineskip\hbox to \paperwidth{\leaders\Dotbox\hfill}%
-}
-\def\DotGrid{\par\leaders\vbox{\DotPattern}\vfill}
 
 \pagestyle{empty}
 \begin{document}
