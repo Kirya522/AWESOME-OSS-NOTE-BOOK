@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    name: Build notebook
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pull repo
+      uses: actions/checkout@master
+    
+    - name: Pull docker image
+      env:
+        IMAGE_NAME: thomasweise/docker-texlive-full:latest
+      run: docker pull $IMAGE_NAME
+
+    - name: Run build
+      env:
+        IMAGE_NAME: thomasweise/docker-texlive-full:latest
+      run: |
+        cd ${GITHUB_WORKSPACE}
+        docker run \
+        -w /project/ \
+        -v $(pwd):/project/ \
+        thomasweise/docker-texlive-full \
+        /bin/bash -c " ls -la && make && make clean"
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: Build
+        # Directory containing files to upload
+        path: ./.build
