@@ -32,7 +32,7 @@ jobs:
         docker run \
         -w /project/ \
         -v $(pwd):/project/ \
-        adnrv/texlive:basic \
+        thomasweise/docker-texlive-full \
         /bin/bash -c " ls -la && make && make clean"
       
     - name: Upload artifact
