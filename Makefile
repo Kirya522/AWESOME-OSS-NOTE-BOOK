@@ -1,5 +1,6 @@
 COMPILER = latexmk --halt-on-error
-ARGS = -pdf
+BUILD_DIRECTORY = .build
+ARGS = -pdf -output-directory=$(BUILD_DIRECTORY)
 
 all: pdfpages.pdf
 
@@ -13,7 +14,7 @@ grid.pdf:
 	$(COMPILER) $(ARGS) grid.tex
 
 cleanall:
-	$(COMPILER) -C
+	$(COMPILER) -C -output-directory=$(BUILD_DIRECTORY)
 
 clean:
-	$(COMPILER) -c
+	$(COMPILER) -c -output-directory=$(BUILD_DIRECTORY)
